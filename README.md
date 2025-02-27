@@ -10,10 +10,6 @@ A modern React application featuring interactive components <Counter, Text Edito
 
 ![image](https://github.com/user-attachments/assets/a671bbcf-1aae-4667-8a7e-a0f469d5fd00)
 
-
-
-
-
 ## Features
 
 - **Interactive Counter**: Animated counter with persistent state
@@ -61,15 +57,6 @@ yarn start
 
 The application will be available at http://localhost:3000
 
-## Component Structure
-
-### Main Components
-
-- **Counter**: Interactive counting component with animated visual feedback
-- **Navbar**: Responsive navigation with authentication-aware menu items
-- **TextEditor**: Rich text editor with user data integration
-- **UserForm**: Form for collecting and storing user information
-
 ### Authentication
 
 The application includes a basic authentication system with:
@@ -77,12 +64,49 @@ The application includes a basic authentication system with:
 - Protected routes
 - Authentication state management
 
+# Component Architecture
+
+## Components Overview
+
+- **Counter**: Interactive counting component with animated visual feedback.  
+- **Navbar**: Responsive navigation with authentication-aware menu items.  
+- **TextEditor**: Rich text editor with user data integration.  
+- **UserForm**: Form for collecting and storing user information.  
+
 ## State Management
 
-- **Local Component State**: Using React's `useState` for component-specific state
-- **Effects and Lifecycle**: Leveraging `useEffect` for side effects and lifecycle management
-- **Local Storage**: Persistent state across browser sessions
-- **Custom Events**: For cross-component communication (e.g., authentication changes)
+The application uses several state management approaches:  
+
+- **Component-level State**: Each component maintains its own state using React's `useState` hook.  
+- **Cross-component Communication**: Custom browser events and shared `localStorage` data.  
+- **Persistence Strategy**: `localStorage` for data persistence across browser sessions.  
+- **Animation State**: `react-spring` for declarative animations tied to component state.  
+
+## Component Details
+
+### 🔹 Counter Component
+- Uses `useState` to track counter value.  
+- Implements `localStorage` persistence.  
+- Animated background that grows based on counter value.  
+- Button click effects using `react-spring`.  
+
+### 🔹 Navbar Component
+- Tracks authentication state.  
+- Listens to custom `authChange` events.  
+- Responsive design with mobile menu.  
+- Authentication-aware navigation options.  
+
+### 🔹 TextEditor Component
+- Manages editor content with **ReactQuill** integration.  
+- Loads user data from `localStorage`.  
+- Auto-populates with user data from the **UserForm** component.  
+- Animation effects when updating content.  
+
+### 🔹 UserForm Component
+- Form data tracked with `useState`.  
+- Implements **unsaved changes detection**.  
+- Uses `localStorage` for data persistence.  
+- Form validation and unique user ID generation.  
 
 ## Animation System
 
