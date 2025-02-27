@@ -95,7 +95,7 @@ function TextEditor() {
             
             <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
               <Button variant="outlined" onClick={resetEditor}>
-                Reset to Default
+                Update with User Data
               </Button>
             </Box>
           </>

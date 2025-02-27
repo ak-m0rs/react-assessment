@@ -1,44 +1,3 @@
-// import { useState, useEffect } from 'react';
-// import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
-// import { Link } from 'react-router-dom';
-// import AuthStatus from './AuthStatus';
-// import { auth } from '../utils/auth';
-
-// function Navbar() {
-//   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-//   useEffect(() => {
-//     auth.checkAuth();
-//     setIsAuthenticated(auth.isAuthenticated);
-//   }, []);
-
-//   console.log(isAuthenticated);
-
-//   return (
-//     <AppBar position="static">
-//       <Toolbar>
-//         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-//           React App
-//         </Typography>
-//         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-//           {/* Only show these navigation items when logged in */}
-//           {isAuthenticated && (
-//             <>
-//               <Button color="inherit" component={Link} to="/counter">Counter</Button>
-//               <Button color="inherit" component={Link} to="/user-form">User Form</Button>
-//               <Button color="inherit" component={Link} to="/text-editor">Text Editor</Button>
-//               <Button color="inherit" component={Link} to="/dashboard">Dashboard</Button>
-//             </>
-//           )}
-//           <AuthStatus />
-//         </Box>
-//       </Toolbar>
-//     </AppBar>
-//   );
-// }
-
-// export default Navbar;
-
 import { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -66,8 +25,10 @@ function Navbar() {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          React App
-        </Typography>
+          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+                React App
+          </Link>
+        </Typography>;
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Button color="inherit" component={Link} to="/counter">Counter</Button>
           {/* Only show these navigation items when logged in */}
